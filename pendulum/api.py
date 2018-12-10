@@ -6,8 +6,8 @@ import pendulum
 def build_smartnote(note):
     return pendulum.note_to_smartnote(note)
 
-@hug.post(note='This is a POST test note')
 @hug.get(note='This is a GET test note')
+@hug.post(note='test')
 @hug.local()
 def SmartNote(note: hug.types.text):
     """Convert Note to Smart Note"""

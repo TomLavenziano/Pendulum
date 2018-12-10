@@ -72,20 +72,17 @@ def extract_parse_datetime(markedText):
 
     print(dTime)
 
-    time_struct, parse_status = cal.parse(dTime.group(1))
-    parsed = datetime.datetime(*time_struct[:6])
+    try:
+        time_struct, parse_status = cal.parse(dTime.group(1))
+        parsed = datetime.datetime(*time_struct[:6])
+    except AttributeError:
+        parsed = ''
 
     return parsed
 
 def extract_context(markedText):
-    # cal = parsedatetime.Calendar();
-    # context = re.search(r'\{(.*)\}.*', markedText)
     tempContext = re.sub('({{{{(.*)}}}})', '', markedText)
     context = re.sub('(by|on)', '', tempContext).strip()
-    print(context)
-
-    # time_struct, parse_status = cal.parse(dTime.group(1))
-    # parsed = datetime.datetime(*time_struct[:6])
 
     return context
 

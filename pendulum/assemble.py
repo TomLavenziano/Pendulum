@@ -1,11 +1,11 @@
 
 
 
-def assemble(note_comps):
+def assemble(note_components):
     """Assemble the various note components back together
     Args:
-        note_comps (tuple): Note components
+        note_components (dict): Note components
     Returns:
         dict: Smart Note
     """
-    return note_comps
+    return note_components
