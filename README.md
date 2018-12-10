@@ -14,16 +14,22 @@
 <br>
 <br>
 
-## Installing
+## Prerequisites
 
-> **[?]** So, how users can get this project up and running on their machines?
+* Python >= 3.7.x
+* virtualenv >= 16.1.x
+
+## Installing
 
 ```sh
 # Describe it in a nice way. Code samples with installation basics works great
-$ npm install --global ghdocs
-$ ghdocs
+$ source ./env/bin/activate
+$ pip install -r requirements.txt
+$ python setup.py install
+
 ```
 
+<!--
 # Getting Started
 
 > **[?]** What does this project stands for?
@@ -31,3 +37,5 @@ $ ghdocs
 ## Usage
 
 > **[?]** Tell contributors how to use it.
+
+-->
