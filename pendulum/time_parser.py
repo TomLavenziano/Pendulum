@@ -79,8 +79,9 @@ def extract_parse_datetime(markedText):
 
 def extract_context(markedText):
     # cal = parsedatetime.Calendar();
-    context = re.search(r'^\{{{{(.*)\}}}}.*', markedText)
-
+    # context = re.search(r'\{(.*)\}.*', markedText)
+    tempContext = re.sub('({{{{(.*)}}}})', '', markedText)
+    context = re.sub('(by|on)', '', tempContext).strip()
     print(context)
 
     # time_struct, parse_status = cal.parse(dTime.group(1))
@@ -91,7 +92,7 @@ def extract_context(markedText):
 
 def demo():
     import nltk
-    # text = nltk.corpus.abc.raw('rural.txt')[:10000]
+    text = nltk.corpus.abc.raw('rural.txt')[:10000]
     text = "Bring my car in for an oil change by next monday"
     marked = mark(text)
     extracted = extract_parse_datetime(marked)
