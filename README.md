@@ -34,13 +34,19 @@ $ python setup.py install
 ```python pendulum/```
 
 2. Running it as an API:
-``` python pendulum/api.py```
-``` curl --request POST \
+
+```python
+python pendulum/api.py
+```
+
+```curl
+curl --request POST \
   --url http://localhost:8000/SmartNote \
   --header 'Cache-Control: no-cache' \
   --header 'Content-Type: application/json' \
   --header 'Postman-Token: f334235d-c5c6-4490-8d8f-0c35ea130042' \
-  --data '{\n	"note": "Finish the homework for Artificial intelligence by this friday"\n}'```
+  --data '{\n	"note": "Finish the homework for Artificial intelligence by this friday"\n}'
+```
 
 
 <!--
